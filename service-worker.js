@@ -6,7 +6,8 @@ const CACHE_FILES = [
     './style.css',
     './geonotion.json',
     './static/favicon.png',
-    './static/icon.png'
+    './static/icon.png',
+    './static/icon128x128.png'
 ];
 
 self.addEventListener('install', async (event) => {
