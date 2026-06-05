@@ -1,12 +1,12 @@
 const CACHE_NAME = 'geonotion-v1';
 const CACHE_FILES = [
-    '/',
-    '/index.html',
-    '/app.js',
-    '/style.css',
-    '/geonotion.json',
-    '/static/favicon.png',
-    '/static/icon.png'
+    './',
+    './index.html',
+    './app.js',
+    './style.css',
+    './geonotion.json',
+    './static/favicon.png',
+    './static/icon.png'
 ];
 
 self.addEventListener('install', async (event) => {
