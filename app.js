@@ -235,11 +235,26 @@ async function populatePage() {
     }
 }
 
+async function registerServiceWorker() {
+    if ("serviceWorker" in navigator) {
+        try {
+            const sw = await navigator.serviceWorker.register("service-worker.js");
+            console.log("Service worker registered:", sw);
+        } catch (error) {
+            console.error("Service worker registration failed", error)
+        }
+    }
+    else {
+        console.error("Service workers are not supported");
+    }  
+}
+
 async function init() {
     /*
     Runs on startup. 
     */
     try {
+        await registerServiceWorker();
         await openDB();
         await populatePage();
 
@@ -251,6 +266,5 @@ async function init() {
         console.error("Failed to initialize:", error);
     }
 }
-
 
 window.addEventListener('load', init);
