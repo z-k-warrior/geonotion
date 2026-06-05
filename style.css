@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background: #fafafa;
     padding: 16px;
     min-height: 100vh;
@@ -80,6 +80,7 @@ header {
 
 #notes-container {
     display: flex;
+    /* Flex organizes elements in 2D rows or columns */
     flex-direction: column;
     gap: 12px;
 }
@@ -132,6 +133,10 @@ header {
 }
 
 @media (min-width: 768px) {
+    /* 
+    Responsive for small phones
+    TODO: Check for padding
+    */
     body {
         padding: 24px;
     }

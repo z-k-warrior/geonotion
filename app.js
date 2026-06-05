@@ -1,4 +1,9 @@
+/*
+Author: Abramov Ilya, 2025-FGiIB-IS-1cm,
+TSU 
+*/
 let db = null;
+
 const DB_NAME = "GeonotionDB";
 const DB_VERSION = 1;
 const OBJECT_STORE_NAME = "notes";
@@ -55,6 +60,8 @@ function loadAllNotes() {
 function saveNoteToStorage(content, latitude, longitude) {
     /*
     Makes transaction to IndexedDB to save note to object store. 
+    @content is a note's text
+    @latitude and @longitude are geo coordinates
     */
     return new Promise((resolve, reject) => {
         if (!db) {
@@ -74,7 +81,7 @@ function saveNoteToStorage(content, latitude, longitude) {
 
 function deleteNoteFromStorage(id) {
     /*
-    Makes transaction to IndexedDB to delete note from object store by id. 
+    Makes transaction to IndexedDB to delete note from object store by @id. 
     */
     return new Promise((resolve, reject) => {
         if (!db) {
@@ -110,6 +117,7 @@ function getGeolocationData() {
         geolocation.getCurrentPosition(
             // getCurrentPosition() accepts success and error functions, also options
             // doesn't work if https is not enabled (?)
+            // edit: works from localhost
             (position) => {
                 resolve({
                     latitude: position.coords.latitude,
@@ -127,6 +135,7 @@ function getGeolocationData() {
 function createNoteElement(note) {
     /*
     Creates note's DOM element and returns it. 
+    Receives @note - plain JS object and uses it.
     */
     const noteElement = document.createElement('div');
     noteElement.classList.add('note');
@@ -204,6 +213,7 @@ async function createNote() {
 
         noteTextArea.value = "";
         alert("Geolocation failed: saving note without coordinates.");
+        // alert here and check for other errors
     }
 }
 

@@ -1,0 +1,34 @@
+{
+    "name": "Geonotion: Text-based notes with geodata",
+    "short_name": "Geonotion",
+    "description": "Enables you to write your notes to IndexedDB and remember the location where it was created.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4CAF50",
+    "icons": [
+        {
+            "src": "static/icon128x128.png",
+            "sizes": "128x128",
+            "purpose": "maskable"
+        },
+        {
+            "src": "static/icon.png",
+            "sizes": "512x512"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "static/screenshot-wide.png",
+            "type": "image/png",
+            "sizes": "637x550",
+            "form_factor": "wide"
+        },
+        {
+            "src": "static/screenshot-narrow.png",
+            "type": "image/png",
+            "sizes": "320x328",
+            "form_factor": "narrow"
+        }
+    ]
+}
